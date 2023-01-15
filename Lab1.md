@@ -67,6 +67,7 @@ On terminal, you'll be prompted to accept an *RSA Fingerprint* on your machine. 
  Once you are here, feel free to explore different commands like `cd, cat, cp, ls, ls -a, mkdir, rm` and exploring the file path structure, which follows the path `/home/linux/ieng6/cse15lwi23/cse15lwi23zzz`. You can create new files, explore the structure as well as use `cat /home/linux/ieng6/cs15lwi23/public/hello.txt` to get a nice welcome message. 
 
  Starting off with the basics, typing `ls` should give you this output: 
+ 
  <img width="365" alt="Screenshot 2023-01-14 at 6 12 58 PM" src="https://user-images.githubusercontent.com/114899512/212519179-11714417-f60f-458e-b941-371eae8bd1e3.png">
 
  Where there is a file called `hello.txt` and a folder called `perl5`.
