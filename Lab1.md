@@ -1,4 +1,5 @@
 # **Lab Report 1 - A Guide to Installation/Setup**
+# **Samvrit Srinath, A17436822**
 
 Welcome to CSE 15L! The following Markdown Page will help assist you in your guide to setting up `ieng6` as well as being able to try out some commands in a remote server!
 
