@@ -63,8 +63,7 @@ On terminal, you'll be prompted to accept an *RSA Fingerprint* on your machine. 
  What should be there is a prompt for logging in, a section for Problems, Suggestions, or Feedback, as well as a welcome prompt with how much CPU you are using  as well as a list of HostNames in your Cluster. 
 
 
- ##**Part 3**: Trying out some commands
-
+## **Part 3**: Trying out some commands
  Once you are here, feel free to explore different commands like `cd, cat, cp, ls, ls -a, mkdir, rm` and exploring the file path structure, which follows the path `/home/linux/ieng6/cse15lwi23/cse15lwi23zzz`. You can create new files, explore the structure as well as use `cat /home/linux/ieng6/cs15lwi23/public/hello.txt` to get a nice welcome message. 
 
  Starting off with the basics, typing `ls` should give you this output: 
