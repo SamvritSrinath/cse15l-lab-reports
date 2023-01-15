@@ -12,7 +12,7 @@ First, head to this link: [Download VSCode](https://code.visualstudio.com/) to s
 
 You should come to a screen that looks like this!
 
-[VSCode Image](Screenshot 2023-01-12 at 1.06.08 PM.png)
+![VSCode Image](Screenshot 2023-01-12 at 1.06.08 PM.png)
 
 Follow the onscreen directions to install VSCode. Ensure that you download the **Stable Version** of VSCode, relative to your OS. Note: I was using an Intel Mac and there was no difference between ARM/AMD Chip Macs and Intel Macs. However, Windows had different installation processes. 
 
@@ -21,7 +21,7 @@ Once the .dmg file is downloaded, open it up and drag the VSCode icon to your Ap
 
 Now feel free to open up VSCode and see whether you reach this screen.
 
-[VSCode Landing Page](Screenshot 2023-01-12 at 12.17.51 PM.png)
+![VSCode Landing Page](Screenshot 2023-01-12 at 12.17.51 PM.png)
 
 Congratulations! VSCode is installed and you will be able to use the integrated terminal to run commands in the future!
 
@@ -33,20 +33,20 @@ Now that you have a valid code editor, we should learn how to connect to `ieng6`
 
 Head to this [link](https://sdacs.ucsd.edu/~icc/index.php) and type in your UCSD username and Student ID. Your student ID should be in the format of `A********` and your username should be the same as the part before your email. 
 
-[SDACS Login](212183979-ffeae9f7-7dfa-47da-b92b-680266fecdf3.png)
+![SDACS Login](212183979-ffeae9f7-7dfa-47da-b92b-680266fecdf3.png)
 
 Click submit and you should be redirected to a page that looks like this: 
 
-[SDACS Accounts](212185324-63442884-8f4e-4ca0-976e-12d5c32d7bef.png)
+![SDACS Accounts](212185324-63442884-8f4e-4ca0-976e-12d5c32d7bef.png)
 
 Click on the button with underneath *Additional Accounts*, and from there reset your password while ensuring that you don't reset your MyTritonLink Account. 
 You should come to a screen that looks like: 
 
-[SDACS Clearance](Screenshot 2023-01-14 at 5.52.00 PM.png)
+![SDACS Clearance](Screenshot 2023-01-14 at 5.52.00 PM.png)
 
 Enter your credentials and click submit. This is where it gets a bit more confusing. 
 
-[SDACS Password Reset](Screenshot 2023-01-14 at 5.53.56 PM.png)
+![SDACS Password Reset](Screenshot 2023-01-14 at 5.53.56 PM.png)
 
 Here you should do the following actions:
 1. Enter your current password, this could be your MyTritonLink password.
@@ -66,7 +66,7 @@ where `zzz` is your username. Your username may only have two characters and tha
 
 On terminal, you'll be prompted to accept an *RSA Fingerprint* on your machine. Type in `yes` and continue. What this will do is upload a file onto your machine that has your credentials to access the remote server. Type in your newly reset password and your device is now authenticated. You should have  a similar terminal output to this: 
 
-[Login Terminal](Screenshot 2023-01-12 at 1.32.20 PM.png)
+![Login Terminal](Screenshot 2023-01-12 at 1.32.20 PM.png)
 
  What should be there is a prompt for logging in, a section for Problems, Suggestions, or Feedback, as well as a welcome prompt with how much CPU you are using  as well as a list of HostNames in your Cluster. 
 
@@ -76,7 +76,7 @@ On terminal, you'll be prompted to accept an *RSA Fingerprint* on your machine. 
 
  Starting off with the basics, typing `ls` should give you this output: 
  
-[ls image](Screenshot 2023-01-14 at 6.12.58 PM.png)
+![ls image](Screenshot 2023-01-14 at 6.12.58 PM.png)
 
  Where there is a file called `hello.txt` and a folder called `perl5`.
 
@@ -86,12 +86,12 @@ On terminal, you'll be prompted to accept an *RSA Fingerprint* on your machine. 
  Some other interesting commands you could try are `ls-a` which shows every file in the directory, including hidden files. 
  You should get an output similar to this:
  
-[ls-a image](Screenshot 2023-01-14 at 6.17.31 PM.png)
+![ls-a image](Screenshot 2023-01-14 at 6.17.31 PM.png)
 
  Or you could try `cd ~` to take you back to your home directory.
  You can confirm this by running `ls` to see the list of items are exactly the same as the first time you ran `ls`.
  
-[cd~](Screenshot 2023-01-14 at 6.19.43 PM.png)
+![cd~](Screenshot 2023-01-14 at 6.19.43 PM.png)
 
  Once you are done running commands, feel free to press **Ctrl + D** to exit or simply type the word `exit` in the command line to exit the server. 
 
