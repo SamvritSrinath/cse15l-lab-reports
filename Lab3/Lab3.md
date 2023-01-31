@@ -101,8 +101,7 @@ Or in Code:
 
 As you can see based on the method, an int[] array is passed in, and the method loops through the entire array and swaps the elements at the beginning and the end of the array. 
 
-1. A Failure Inducing Input would be: 
-###
+A Failure Inducing Input would be: 
 
 	@Test
 	public void testReverseInPlace(){
@@ -114,9 +113,9 @@ As you can see based on the method, an int[] array is passed in, and the method 
 
 - This would fail as the method would compare the two arrays and the reverseInPlace method would incorrectly try to reverse the array, thus not matching the expected output.
 
-2. An Input that does not produce a failure: 
+An Input that does not produce a failure: 
 
-###
+
 	@Test
 	public void testReverseInPlace2(){
 		int[] input = {4,3,3,4}; //input array would be 4,3,3,4
