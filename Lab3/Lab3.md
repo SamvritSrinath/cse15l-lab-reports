@@ -135,7 +135,7 @@ Or if you want the terminal Output:
 
 The clear symptom is that: **The method does not stop reversing the array**. When the middle of the array is reached, the method should ideally stop and not continue to reverse the array. 
 
-However, the current method configuration causes the reversing to continue to occur, but what eventually happens is that, since the first $1/2$ of the array is already reversed, these values are simply copied over to the second half of the array.
+However, the current method configuration causes the reversing to continue to occur, but what eventually happens is that, since the first 1/2 of the array is already reversed, these values are simply copied over to the second half of the array.
 
 
 4. The Bug:
