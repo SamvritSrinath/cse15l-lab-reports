@@ -7,6 +7,44 @@ The affiliated code for the ***StringServer*** Class is attached here:
 
 ![StringServer Code](./images/StringServer1.png)
 
+or In code: 
+
+	import java.io.IOException;
+	import java.net.URI;
+
+	class Handler implements URLHandler{
+		String output = "";
+
+		public String handleRequest(URI url) {
+			if (url.getPath().equals("/")) {
+				return output;
+			} else if (url.getPath().equals("/add-message")) {
+				String[] parameters = url.getQuery().split("=");
+				if (parameters[0].equals("s")) {
+					output += parameters[1] + "\n";
+					return output;
+				} else {
+					return "Error: Invalid parameter";
+				}
+			}
+			return "404 Not Found";
+
+		}
+	}
+	public class StringServer {
+		public static void main(String[] args) throws IOException {
+			if (args.length == 0) {
+				System.out.println("Missing port number! Try any number between 1024 to 49151");
+				return;
+			}
+
+			int port = Integer.parseInt(args[0]);
+
+			Server.start(port, new Handler());
+		}
+	}
+
+
 What this class does is that it has a class called `Handler` that handles requests to this server. As well as a main method that initializes the server in the case for a valid port number. 
 
 So for giving the terminal commands :
@@ -25,6 +63,8 @@ The domain is `localhost:3000` and then the path is `add-message`. After this is
 As such the new output would be `Hello`: shown by this screenshot:
 
 ![StringServer Output](./images/Output1.png)
+Or Cropped:
+
 ![StringServer Output](./images/Output1_Closeup.png)
 
 ### Second Screenshot
@@ -51,10 +91,19 @@ A particular Bug I noticed from from the code in Lab 3 was a method called: `rev
 
 ![StringServer Code](./images/Bug_Prog.png)
 
+Or in Code:
+
+	static void reverseInPlace(int[] arr){
+		for(int i = 0; i < arr.length; i++){
+			arr[i] = arr[arr.length - 1 - i];
+		}
+	}
+
 As you can see based on the method, an int[] array is passed in, and the method loops through the entire array and swaps the elements at the beginning and the end of the array. 
 
 1. A Failure Inducing Input would be: 
 ###
+
 	@Test
 	public void testReverseInPlace(){
 		int[] input = {1,2,3,4}; //Input array would be 1,2,3,4
@@ -63,9 +112,10 @@ As you can see based on the method, an int[] array is passed in, and the method 
 		assertEquals(expected, input);
 	}
 
-This would fail as the method would compare the two arrays and the reverseInPlace method would incorrectly try to reverse the array, thus not matching the expected output.
+- This would fail as the method would compare the two arrays and the reverseInPlace method would incorrectly try to reverse the array, thus not matching the expected output.
 
 2. An Input that does not produce a failure: 
+
 ###
 	@Test
 	public void testReverseInPlace2(){
@@ -90,11 +140,11 @@ However, the current method configuration causes the reversing to continue to oc
 
 4. The Bug:
 
-The Clear Bug is that the method has a `for` loop which loops through from `i = 0` to `i < arr.length`. This causes the method to continue to reverse the array, even after the array has been reversed. Another bug is that the initial values are not stored for the first $1/2$ of the array, and so the values are simply copied over from the second half to the first half. 
+The Clear Bug is that the method has a `for` loop which loops through from `i = 0` to `i < arr.length`. This causes the method to continue to reverse the array, even after the array has been reversed. Another bug is that the initial values are not stored for the first 1/2 of the array, and so the values are simply copied over from the second half to the first half. 
 
 So there are two steps:
 
-1. The `for` loop should be changed to `i < arr.length/2` so that the method stops reversing the array after the first $1/2$ of the array is reversed.
+1. The `for` loop should be changed to `i < arr.length/2` so that the method stops reversing the array after the first 1/2 of the array is reversed.
 2. The initial values should be stored in a temporary value(or an array) so that once the value at the first half of the array is swapped: the value at the second half of the array is swapped with the initial value. 
 
 So Before: we had
