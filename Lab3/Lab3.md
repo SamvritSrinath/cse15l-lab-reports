@@ -45,7 +45,7 @@ or In code:
 	}
 
 
-What this class does is that it has a class called `Handler` that handles requests to this server. As well as a main method that initializes the server in the case for a valid port number. 
+What this class does is that it has a class called `Handler` that handles requests to this server. As well as a main method that initializes the server in the case for a valid port number.  
 
 So for giving the terminal commands :
 
