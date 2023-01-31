@@ -38,7 +38,8 @@ This request will modify the `output` field in the class `StringServer` and add 
 
 As the method checks for the path, subsequently a valid query is checked for, and then is split using the delimiter `=`: this checks for a valid query type as well as the input, and so `parameters[1]` represents the message to be added to the output. The output field of `Handler` is modified as valid requests are made and the strings for the `Handler` class are updated after every query with path `add-message`.
 
-This call also changes the parameter passed in: `URI url` now is represented by the new request: `http://localhost:3000/add-message?s=Lab%203`. This is shown in the screenshot below:
+This call also changes the parameter passed in: `URI url` now is represented by the new request: 
+`http://localhost:3000/add-message?s=Lab%203`. This is shown in the screenshot below:
 
 ![StringServer Output](./images/Output2_Cropped.png)
 
@@ -112,13 +113,14 @@ However: to fix the bugs:
 		arr[arr.length - i - 1] = temp;
     }
 
-Where we assign a temporary value to store the initial value, swap the value of the array at index `i` and then swap the value of the array at index `arr.length - i - 1` with the initial value.
+Where we assign a temporary value to store the initial value, swap the value of the array at index `i` and then swap the value of the array at index 
+`arr.length - i - 1` with the initial value.
 
 
 
 ## **Part 3**: Something new
 
-Something new I learned was regarding how to build and configure your own server. Before Week 2, the concepts of queries, handling requests, Ports and instantiazing a server were not known to me. However, after learning about these concepts, I was able to build a server and handle requests. Things like splitting up a query, using `regex` and returning valid output were all new to me. Also, knowing which URL to use to access the server from the `ieng6` virtual machine was also new to me
+Something new I learned was regarding how to build and configure your own server. Before Week 2, the concepts of queries, handling requests, Ports and instantiazing a server were not known to me. However, after learning about these concepts, I was able to build a server and handle requests. Things like splitting up a query, using `regex` and returning valid output were all new to me. Also, knowing which URL to use to access the server from the `ieng6` virtual machine was also new to me.
 
 (format: `http://ieng6-20x.ucsd.edu:PortNum`).
 
