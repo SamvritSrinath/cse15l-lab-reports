@@ -171,7 +171,7 @@ Where we assign a temporary value to store the initial value, swap the value of 
 ## **Part 3**: Something new
 
 Something new I learned was regarding how to build and configure your own server. Before Week 2, the concepts of queries, handling requests, Ports and instantiazing a server were not known to me. However, after learning about these concepts, I was able to build a server and handle requests. Things like splitting up a query, using `regex` and returning valid output were all new to me. Also, knowing which URL to use to access the server from the `ieng6` virtual machine was also new to me.
-
+ 
 (format: `http://ieng6-20x.ucsd.edu:PortNum`).
 
 
