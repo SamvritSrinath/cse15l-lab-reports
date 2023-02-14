@@ -105,9 +105,9 @@ The associated output:
 
 This command gives a list of files that have the word *hike* within them as well as the counts for each one. The `grep -v "0"` command is used to filter out the files that do not have the word *hike* in them. This means that the files that have the word *hike* in them are the ones that are most likely to be associated with hiking, and are more well-known when for hiking. We are omitting the files that do not have the word *hike* in them because they are not relevant to the search. This could be useful to filter out or give a ranked search on which destinations are more attractive for hiking but still give a variety of options at the same time. 
 
-Source: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command and ChatGPT!
+Source: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command!
 
-![Query](cse15l-lab-reports/LabReport3.md/images/Screenshot2023-02-13at3.12.53PM.png)
+
 
 ### 3. **-r**
 
