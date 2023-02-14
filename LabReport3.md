@@ -49,7 +49,7 @@ This outputs:
 
 That means that these two chapters do not mention the word **violence** in their text: which means that these chapters are more likely to be suitable for giving to children or people who are sensitive to violence. Ultimately, this means that the `-L` option is useful for finding files that do not have the specified pattern in them. And in this case, this would be useful to filter out searches that have a specific *buzzword* or pattern that consumers or clients should not see. 
 
-My source for this set of operations: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command.
+My source for this set of operations: [Man Grep Docs](https://man7.org/linux/man-pages/man1/grep.1.html) and also using the `man grep` command.
 
 ### 2. -c
 
@@ -105,7 +105,7 @@ The associated output:
 
 This command gives a list of files that have the word *hike* within them as well as the counts for each one. The `grep -v "0"` command is used to filter out the files that do not have the word *hike* in them. This means that the files that have the word *hike* in them are the ones that are most likely to be associated with hiking, and are more well-known when for hiking. We are omitting the files that do not have the word *hike* in them because they are not relevant to the search. This could be useful to filter out or give a ranked search on which destinations are more attractive for hiking but still give a variety of options at the same time. 
 
-Source: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command!
+Source: [Man Grep Docs](https://man7.org/linux/man-pages/man1/grep.1.html) and also using the `man grep` command!
 
 
 
@@ -150,7 +150,7 @@ The associated output:
 
 What this will do is that bash will traverse the current directory or `pwd` which is `written_2` and find all the files that contian the pattern *Canary*. How this is useful is that while grep -rl can also be used to specify a path, glob patterns may also have different use cases where they are most optimal, suppose in the case where you need to search through files that have a certain type like `.txt` or `.java` files. Should you know the folder structure, you can use `grep -rl` to search through the directory, but if you don't know the folder structure, you can use glob patterns to search through all files in the directory and subdirectories.
 
-Sources: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
+Sources: [Geek Stuff](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)
 
 ### 4. **-v**
 
@@ -185,4 +185,4 @@ The associated output is:
 
 The use case for this would be to review topics or chapters that are not concerned with the topic that you already reviewd, and what this command is doing is outputting all the lines present within this `ch1.txt` file that do not contain the pattern *Architecture*. This is useful because it allows you to filter out the topics that you already reviewed, and focus on the topics that you have not reviewed yet. This could be something that could be used for study guides, filtering out information or chapter review questions that have already been asked. 
 
-Source: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
+Source: [Geek Stuff](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)
