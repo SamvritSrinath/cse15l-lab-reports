@@ -180,7 +180,8 @@ one
 dressing up
 
 
-Not only are function and form separate, over their long lives buildings can successfully accommodate a variety of uses. 
+Not only are function and form separate, over their long lives buildings can successfully 
+accommodate a variety of uses. 
 For example, some of 
 the most famous museums (the Louvre, the Hermitage, the Belvedere) started life as royal palaces; 
 the Uffizi in Florence is so named because it 
