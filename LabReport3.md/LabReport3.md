@@ -3,12 +3,42 @@
 ## Grep Commands and Options
 This lab report will mainly be considering the usages of *Grep* in terminal as well as any associated options with terminal. Examples were gotten from using the command `man grep` to see which options yield which results. 
 
-### 1. **-L**
+### 1. **-r**
+The `-r` option in grep is used to search for patterns in files recursively. This means that the command will search for the pattern in all the files in the directory and its subdirectories. This could be useful when searching for a pattern in a directory that has many subdirectories as it would be tedious to search for the pattern in each subdirectory.
+
+Example 1:
+Similar to the skill demo, suppose you wanted to find the occurances of the word *Lucayans* in the `written_2` directory. You could use 
+
+	grep -r "Lucayans" written_2
+
+This outputs:
+
+	skill-demo1-data/written_2/travel_guides/berlitz2/Bahamas-History.txt:Centuries before the arrival of Columbus, a peaceful Amerindian people who called themselves the Luccucairi had settled in the Bahamas. Originally from South America, they had traveled up through the Caribbean islands, surviving by cultivating modest crops ...
+	skill-demo1-data/written_2/travel_guides/berlitz2/Bahamas-History.txt:The Spaniards never bothered to settle in the Bahamas, but the number of shipwrecks attest that their galleons frequently passed through the archipelago en route to and from the Caribbean, Florida, Bermuda, and their home ports. On Eleuthera the explorers dug a fresh-water well — at a spot now known as “Spanish Wells” ...
+
+Example 2:
+
+Suppose you wanted to find references or the occurances to the surname *Chavez* in the `written_2` directory. You could use the command `grep -r "Chavez" written_2` to find all the occurances of the surname *Chavez* in the `written_2` directory. 
+
+	grep -r "Chavez" written_2
+
+This outputs: 
+
+	skill-demo1-data/written_2/non-fiction/OUP/Castro/chP.txt:References Campa 1977; Galvan 1985; Hernández-Chavez, Cohen, and Beltramo 1975; Peña 1985b; Vasquez 1975
+	skill-demo1-data/written_2/non-fiction/OUP/Castro/chQ.txt:References Chavéz 1983; Davalos 1996; Erevia 1980; Horowitz 1993; Martinez-Chavez 1989; Ortiz 1992; Salcedo 1997; Siporin 1984; Vigil 1998
+	skill-demo1-data/written_2/non-fiction/OUP/Castro/chA.txt:References Anaya and Lomelí 1989; Barrera 1988; Bierhorst 1990; Chavez 1984; Leal 1995; Valdez and Steiner 1972
+	skill-demo1-data/written_2/travel_guides/berlitz1/WhatToLosAngeles.txt: at Dodger Stadium, just north of Downtown in Chavez Ravine. In Anaheim
+
+As such, `grep -r` proves useful when searching for patterns in a directory that has many subdirectories, without knowing which subdirectory or the folder structure of the directory. This could be useful when searching for a key specific term or file reference in a root or home directory, or for filtering out references or key terms in a huge study guide. The benefit of being able to search recursively is that you don't need to specify specific files to apply grep on, but rather an entire directory and its subdirectories. 
+
+Sources: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
+
+### 2. **-L**
 The `-L` option in grep is used to print out files that do not have the specified pattern. This could be useful when searching for files that have not been searched yet. 
 Suppose you have a list of queries and you need to find out which files have not been searched yet. You could use the command `grep -L "query" *` to find out which files have not been searched yet.
 
 Example 1: 
-Suppose you wanted to find all the files that did not have the word *Ocean* within its file text, as maybe your looking for locations in `travel_guides/` that don't have attractions of the ocean. In that case: 
+Suppose you wanted to find all the files that did not have the word *Ocean* within its file text, as maybe you're looking for locations in `travel_guides/` that don't have attractions of the ocean. In that case: 
 
 	grep -rL "Ocean" written_2/travel_guides/berlitz1
 
@@ -51,7 +81,7 @@ That means that these two chapters do not mention the word **violence** in their
 
 My source for this set of operations: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command.
 
-### 2. -c
+### 3. -c
 
 The `-c` option in grep is used to print out the number of lines that contain a pattern(not necessarily occurances but patterns). This might be useful in screenplay or other indexed type of writing where you'll have to analyze how many times a certain character or word apppears. 
 
@@ -106,51 +136,6 @@ The associated output:
 This command gives a list of files that have the word *hike* within them as well as the counts for each one. The `grep -v "0"` command is used to filter out the files that do not have the word *hike* in them. This means that the files that have the word *hike* in them are the ones that are most likely to be associated with hiking, and are more well-known when for hiking. We are omitting the files that do not have the word *hike* in them because they are not relevant to the search. This could be useful to filter out or give a ranked search on which destinations are more attractive for hiking but still give a variety of options at the same time. 
 
 Source: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command!
-
-
-
-### 3. **-r**
-
-The `-r` option in grep is used to search recursively through a directory. This means that the grep command will search through all the files in a directory and all of its subdirectories. I've used this option consistently to search through the `written_2` directory or any directory, since it's hard to isolate files one by one. However, you can pipe outputs to `grep` with `find` and a glob pattern, but that's a bit more complicated.
-
-An example of this would be to find all the files that contain the word *Puerto Rico* in the `written_2` directory. 
-
-	grep -rl "Puerto Rico" written_2
-
-The associated output: 
-
-	written_2/travel_guides/berlitz1/HistoryJamaica.txt
-	written_2/travel_guides/berlitz1/WhatToFWI.txt
-	written_2/travel_guides/berlitz2/PuertoRico-WhatToDo.txt
-	written_2/travel_guides/berlitz2/PuertoRico-History.txt
-	written_2/travel_guides/berlitz2/PuertoRico-WhereToGo.txt
-	written_2/travel_guides/berlitz2/Cuba-WhereToGo.txt
-	written_2/travel_guides/berlitz2/CanaryIslands-WhereToGo.txt
-	written_2/travel_guides/berlitz2/CanaryIslands-WhatToDo.txt
-	written_2/travel_guides/berlitz2/Cancun-WhereToGo.txt
-
-This means that all these files had the word *Puerto Rico* in them, and could reference an interaction, possible travel plans, or intersting sights to see near or around Puerto Rico. This is evidenced by destinations like the **Canary Islands** or **Cuba** which are not Puerto Rico, but around or near. The usefulness of this command allows to expedite the process of searching for a pattern in a directory, rather than specifying each file individually.
-
-One thing that I learned from ChatGPT was that `grep -r` forces `grep` to act like `rgrep`, another format. However I wasn't able to find usages of rgrep, rather the command was not found. 
-
-Another example would be to use the glob pattern `*` to explore all files in the directory and subdirectories.
-
-	grep -rl "Canary" *
-
-The associated output:
-
-	written_2/travel_guides/berlitz1/IntroMadeira.txt
-	written_2/travel_guides/berlitz1/WhatToMadeira.txt
-	written_2/travel_guides/berlitz1/HistoryMadeira.txt
-	written_2/travel_guides/berlitz2/CostaBlanca-WhatToDo.txt
-	written_2/travel_guides/berlitz2/CanaryIslands-WhereToGo.txt
-	written_2/travel_guides/berlitz2/CanaryIslands-History.txt
-	written_2/travel_guides/berlitz2/CanaryIslands-WhatToDo.txt
-
-
-What this will do is that bash will traverse the current directory or `pwd` which is `written_2` and find all the files that contian the pattern *Canary*. How this is useful is that while grep -rl can also be used to specify a path, glob patterns may also have different use cases where they are most optimal, suppose in the case where you need to search through files that have a certain type like `.txt` or `.java` files. Should you know the folder structure, you can use `grep -rl` to search through the directory, but if you don't know the folder structure, you can use glob patterns to search through all files in the directory and subdirectories.
-
-Sources: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
 
 ### 4. **-v**
 
