@@ -13,8 +13,15 @@ Similar to the skill demo, suppose you wanted to find the occurances of the word
 
 This outputs:
 
-	skill-demo1-data/written_2/travel_guides/berlitz2/Bahamas-History.txt:Centuries before the arrival of Columbus, a peaceful Amerindian people who called themselves the Luccucairi had settled in the Bahamas. Originally from South America, they had traveled up through the Caribbean islands, surviving by cultivating modest crops ...
-	skill-demo1-data/written_2/travel_guides/berlitz2/Bahamas-History.txt:The Spaniards never bothered to settle in the Bahamas, but the number of shipwrecks attest that their galleons frequently passed through the archipelago en route to and from the Caribbean, Florida, Bermuda, and their home ports. On Eleuthera the explorers dug a fresh-water well — at a spot now known as “Spanish Wells” ...
+	skill-demo1-data/written_2/travel_guides/berlitz2/Bahamas-History.txt:Centuries 
+	before the arrival of Columbus, a peaceful Amerindian people who called themselves 
+	the Luccucairi had settled in the Bahamas. Originally from South America, 
+	they had traveled up through the Caribbean islands, surviving by cultivating modest crops ...
+	skill-demo1-data/written_2/travel_guides/berlitz2/Bahamas-History.txt:The Spaniards
+	never bothered to settle in the Bahamas, but the number of shipwrecks attest 
+	that their galleons frequently passed through the archipelago en route to and 
+	from the Caribbean, Florida, Bermuda, and their home ports. On Eleuthera 
+	the explorers dug a fresh-water well — at a spot now known as “Spanish Wells” ...
 
 Example 2:
 
@@ -24,10 +31,17 @@ Suppose you wanted to find references or the occurances to the surname *Chavez* 
 
 This outputs: 
 
-	skill-demo1-data/written_2/non-fiction/OUP/Castro/chP.txt:References Campa 1977; Galvan 1985; Hernández-Chavez, Cohen, and Beltramo 1975; Peña 1985b; Vasquez 1975
-	skill-demo1-data/written_2/non-fiction/OUP/Castro/chQ.txt:References Chavéz 1983; Davalos 1996; Erevia 1980; Horowitz 1993; Martinez-Chavez 1989; Ortiz 1992; Salcedo 1997; Siporin 1984; Vigil 1998
-	skill-demo1-data/written_2/non-fiction/OUP/Castro/chA.txt:References Anaya and Lomelí 1989; Barrera 1988; Bierhorst 1990; Chavez 1984; Leal 1995; Valdez and Steiner 1972
-	skill-demo1-data/written_2/travel_guides/berlitz1/WhatToLosAngeles.txt: at Dodger Stadium, just north of Downtown in Chavez Ravine. In Anaheim
+	skill-demo1-data/written_2/non-fiction/OUP/Castro/chP.txt:
+	References Campa 1977; Galvan 1985; Hernández-Chavez, Cohen, 
+	and Beltramo 1975; Peña 1985b; Vasquez 1975
+	skill-demo1-data/written_2/non-fiction/OUP/Castro/chQ.txt:
+	References Chavéz 1983; Davalos 1996; Erevia 1980; Horowitz 1993; 
+	Martinez-Chavez 1989; Ortiz 1992; Salcedo 1997; Siporin 1984; Vigil 1998
+	skill-demo1-data/written_2/non-fiction/OUP/Castro/chA.txt:
+	References Anaya and Lomelí 1989; Barrera 1988; Bierhorst 1990; 
+	Chavez 1984; Leal 1995; Valdez and Steiner 1972
+	skill-demo1-data/written_2/travel_guides/berlitz1/WhatToLosAngeles.txt: 
+	at Dodger Stadium, just north of Downtown in Chavez Ravine. In Anaheim
 
 As such, `grep -r` proves useful when searching for patterns in a directory that has many subdirectories, without knowing which subdirectory or the folder structure of the directory. This could be useful when searching for a key specific term or file reference in a root or home directory, or for filtering out references or key terms in a huge study guide. The benefit of being able to search recursively is that you don't need to specify specific files to apply grep on, but rather an entire directory and its subdirectories. 
 
@@ -165,7 +179,21 @@ The associated output is:
 	dressing up
 
 
-	Not only are function and form separate, over their long lives buildings can successfully accommodate a variety of uses. For example, some of the most famous museums (the Louvre, the Hermitage, the Belvedere) started life as royal palaces; the Uffizi in Florence is so named because it originally housed offices; and the Prado in Madrid was designed to be a museum of science, not art. The acclaimed Musée d’Orsay in Paris is housed in a railroad station. Two of my favorite small museums, the Frick Collection in New York City and the Phillips Collection in Washington, D.C., were built as residences. As historic preservation and adaptive reuse demonstrate, you can shop in a renovated warehouse, do office work in a converted loft, or live in a barn. Assuming, of course, that the warehouse, the loft, and the barn were well built. The material fabric of old buildings—the heavy beams, rough brick walls, and solid woodwork—is one of their chief pleasures. That is why we feel cheated by hollow walls, flimsy doors, and shaky balustrades. Buildings should last and feel as though they will.
+	Not only are function and form separate, over their long lives 
+	buildings can successfully accommodate a variety of uses. For example, 
+	some of the most famous museums (the Louvre, the Hermitage, the Belvedere) 
+	started life as royal palaces; the Uffizi in Florence is so named because it 
+	originally housed offices; and the Prado in Madrid was designed to be a 
+	museum of science, not art. The acclaimed Musée d’Orsay in Paris is housed in a 
+	railroad station. Two of my favorite small museums, the Frick Collection in 
+	New York City and the Phillips Collection in Washington, D.C., were built as 
+	residences. As historic preservation and adaptive reuse demonstrate, you can shop in a 
+	renovated warehouse, do office work in a converted loft, or live in a barn. 
+	Assuming, of course, that the warehouse, the loft, and the barn were well built. 
+	The material fabric of old buildings—the heavy beams, rough brick walls, and 
+	solid woodwork—is one of their chief pleasures. That is why we feel cheated 
+	by hollow walls, flimsy doors, and shaky balustrades. Buildings should 
+	last and feel as though they will.
 	//...And the rest of the .txt file. 
 
 The use case for this would be to review topics or chapters that are not concerned with the topic that you already reviewd, and what this command is doing is outputting all the lines present within this `ch1.txt` file that do not contain the pattern *Architecture*. This is useful because it allows you to filter out the topics that you already reviewed, and focus on the topics that you have not reviewed yet. This could be something that could be used for study guides, filtering out information or chapter review questions that have already been asked. 
