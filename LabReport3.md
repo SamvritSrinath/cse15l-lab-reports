@@ -45,7 +45,7 @@ This outputs:
 
 As such, `grep -r` proves useful when searching for patterns in a directory that has many subdirectories, without knowing which subdirectory or the folder structure of the directory. This could be useful when searching for a key specific term or file reference in a root or home directory, or for filtering out references or key terms in a huge study guide. The benefit of being able to search recursively is that you don't need to specify specific files to apply grep on, but rather an entire directory and its subdirectories. 
 
-Sources: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
+Sources: [https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)
 
 ### 2. **-L**
 The `-L` option in grep is used to print out files that do not have the specified pattern. This could be useful when searching for files that have not been searched yet. 
@@ -93,7 +93,7 @@ This outputs:
 
 That means that these two chapters do not mention the word **violence** in their text: which means that these chapters are more likely to be suitable for giving to children or people who are sensitive to violence. Ultimately, this means that the `-L` option is useful for finding files that do not have the specified pattern in them. And in this case, this would be useful to filter out searches that have a specific *buzzword* or pattern that consumers or clients should not see. 
 
-My source for this set of operations: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command.
+My source for this set of operations: [https://man7.org/linux/man-pages/man1/grep.1.html](https://man7.org/linux/man-pages/man1/grep.1.html) and also using the `man grep` command.
 
 ### 3. -c
 
@@ -149,7 +149,7 @@ The associated output:
 
 This command gives a list of files that have the word *hike* within them as well as the counts for each one. The `grep -v "0"` command is used to filter out the files that do not have the word *hike* in them. This means that the files that have the word *hike* in them are the ones that are most likely to be associated with hiking, and are more well-known when for hiking. We are omitting the files that do not have the word *hike* in them because they are not relevant to the search. This could be useful to filter out or give a ranked search on which destinations are more attractive for hiking but still give a variety of options at the same time. 
 
-Source: https://man7.org/linux/man-pages/man1/grep.1.html and also using the `man grep` command!
+Source: [https://man7.org/linux/man-pages/man1/grep.1.html](https://man7.org/linux/man-pages/man1/grep.1.html) and also using the `man grep` command!
 
 ### 4. **-v**
 
@@ -199,4 +199,4 @@ The associated output is:
 
 The use case for this would be to review topics or chapters that are not concerned with the topic that you already reviewd, and what this command is doing is outputting all the lines present within this `ch1.txt` file that do not contain the pattern *Architecture*. This is useful because it allows you to filter out the topics that you already reviewed, and focus on the topics that you have not reviewed yet. This could be something that could be used for study guides, filtering out information or chapter review questions that have already been asked. 
 
-Source: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
+Source: [https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)
