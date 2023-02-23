@@ -180,19 +180,21 @@ The associated output is:
 
 	Not only are function and form separate, over their long lives 
 	buildings can successfully accommodate a variety of uses. For example, 
-	some of the most famous museums (the Louvre, the Hermitage, the Belvedere) 
-	started life as royal palaces; the Uffizi in Florence is so named because it 
-	originally housed offices; and the Prado in Madrid was designed to be a 
-	museum of science, not art. The acclaimed Musée d’Orsay in Paris is housed in a 
-	railroad station. Two of my favorite small museums, the Frick Collection in 
-	New York City and the Phillips Collection in Washington, D.C., were built as 
-	residences. As historic preservation and adaptive reuse demonstrate, you can shop in a 
-	renovated warehouse, do office work in a converted loft, or live in a barn. 
-	Assuming, of course, that the warehouse, the loft, and the barn were well built. 
-	The material fabric of old buildings—the heavy beams, rough brick walls, and 
-	solid woodwork—is one of their chief pleasures. That is why we feel cheated 
-	by hollow walls, flimsy doors, and shaky balustrades. Buildings should 
-	last and feel as though they will.
+	some of the most famous museums (the Louvre, the Hermitage, 
+	the Belvedere) started life as royal palaces; the Uffizi 
+	in Florence is so named because it originally housed offices; 
+	and the Prado in Madrid was designed to be a museum of science, 
+	not art. The acclaimed Musée d’Orsay in Paris is housed in a railroad station. 
+	Two of my favorite small museums, the Frick Collection in New York City and 
+	the Phillips Collection in Washington, D.C., were built as residences. 
+	As historic preservation and adaptive reuse demonstrate, 
+	you can shop in a renovated warehouse, do office work 
+	in a converted loft, or live in a barn. Assuming, of course, that 
+	the warehouse, the loft, and the barn were well built. The material 
+	fabric of old buildings—the heavy beams, rough brick walls, and 
+	solid woodwork—is one of their chief pleasures. That is why we 
+	feel cheated by hollow walls, flimsy doors, and shaky balustrades. 
+	Buildings should last and feel as though they will.
 	//...And the rest of the .txt file. 
 
 The use case for this would be to review topics or chapters that are not concerned with the topic that you already reviewd, and what this command is doing is outputting all the lines present within this `ch1.txt` file that do not contain the pattern *Architecture*. This is useful because it allows you to filter out the topics that you already reviewed, and focus on the topics that you have not reviewed yet. This could be something that could be used for study guides, filtering out information or chapter review questions that have already been asked. 
