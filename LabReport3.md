@@ -178,7 +178,6 @@ The associated output is:
 	one
 	dressing up
 
-
 	Not only are function and form separate, over their long lives 
 	buildings can successfully accommodate a variety of uses. For example, 
 	some of the most famous museums (the Louvre, the Hermitage, the Belvedere) 
