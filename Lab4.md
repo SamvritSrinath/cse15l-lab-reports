@@ -8,7 +8,7 @@ In previous lab tasks, we've set up SSH keys to enable us to login to `ieng6` wi
 
 Now we can login to `ieng6` using the key inputs: `ssh cs15lwi23___@ieng6.ucsd.edu <enter>`(Mine was ash) and now we don't need a password so we can directly login to the server. See the screenshot and note that there was no password prompt. 
 
-**Insert image here**
+
 
 ![Image](Lab4Screenshots/ieng6.png)
 
@@ -18,7 +18,7 @@ In this step, we need to clone the repository from the remote server onto our lo
 ### Setting up SSH Keys for Github
 - Ensuring that you're logged into ieng6, run the command `ssh-keygen` to generate a new SSH key. Then use `cat <path to key>` and copy using `Ctrl + C` to copy and go to [Github.com](github.com). From there, go to Settings and and click on *SSH and GBG keys*. From there, Click on a new SSH key and paste your key into the box and label it with your UCSD email(conventions). You should arrive to a screen like this.
 
-**Insert image here**
+
 ![Github](Lab4Screenshots/Github.png)
 
 
@@ -29,7 +29,7 @@ And finally test your connection using the command `ssh -T git@github.com`. If y
 Keys Pressed: `git clone <Ctrl + V> <enter>`
 First we must fork the repository. Using this link: [Repository](https://github.com/ucsd-cse15l-w23/lab7), fork the repository and then clone using this command. `git clone <Ctrl + V> <enter>`. I used `CTRL + V` to paste the link to the repository as Github.com allows you to copy the SSH command `git@github.com:SamvritSrinath/lab7.git` from the browser itself, I did this prior to ssh-ing. This will clone the repository onto our local machine.
 
-**Insert Image here**
+
 ![Clone](Lab4Screenshots/Clone.png)
 
 ## Step 6: Running the Tests
@@ -38,7 +38,7 @@ Keys Pressed: `cd lab7 <enter> <up><up><up><up><up><enter> <up><up><up><up><up><
 First I use the command `cd lab7 <enter>` to navigate to the directory. Then my inputs are: `<up><up><up><up><up><enter> <up><up><up><up><up><enter>`
 The reason why is that I have so many up inputs is to access the JUNIT compile and run commands which are respectively: `javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java` and `java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore ListExampleTests`. I used the up arrows to access these two commands run them by using enter, these were the 5th elements in my history. this way I can avoid copy pasting the commands which are complicated to run. 
 
-**Insert Images here**
+
 ![HistoryTests](Lab4Screenshots/HistoryTests.png)
 ![BrokenTests](Lab4Screenshots/BrokenTests.png)
 
@@ -56,7 +56,7 @@ Then, I use the arrow keys 12 times to navigate to the 12th column of that line 
 Keys Pressed: `<up><up><up> <enter> <up><up><up><enter>`
 Now that we've fixed the file, we need to run the tests again. I use the up arrow to access the commands to compile and run the JUNIT tests. I then use enter to run the commands. This is because the only command that ran after I compiled and ran the Junit Tests was the `nano` command. This means that the javac is 3 lines above the current line and the java command is 2 lines above the current line. Using the first 3 arrows, I can access the javac command and run it. Then using the next 3 arrows(as the `javac` was run), I can access the java command and run it.
 
-**Insert Images here**
+
 ![NanoHistory](Lab4Screenshots/NanoHistory.png)
 ![JUNIT](Lab4Screenshots/JUNIT.png)
 
