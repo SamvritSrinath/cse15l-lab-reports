@@ -25,9 +25,8 @@ The first step is to SSH into ieng6. Each person will have their own credentials
 
 This can be achieved using `ssh-keygen`, getting a random art image, and using `scp <path to key> ieng6.ucsd.edu:~/.ssh/authorized_keys`. This will load our key onto the `ieng6` remote server and allow the server to recognize our machine as an authorized user. This should be done prior to creating the bash script, as the bash script is local to our machine, and we would be able to run a script that would SSH into `ieng6` and run the rest of the script.	
 
-**However this should all be done prior to running the bash script.** This is because the bash script is local to the environment its in, and after SSHing into `ieng6` the bash script would not be able to continue executing until the server is closed. I found this through these outputs:
+**However this should all be done prior to running the bash script.** This is because the bash script is local to the environment its in, and after SSHing into `ieng6` the bash script would not be able to continue executing until the server is closed. 
 
-![SSH](Lab5Screenshots/SSH.png)
 
 ### Cloning the Repo
 
