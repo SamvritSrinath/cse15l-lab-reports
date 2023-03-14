@@ -27,7 +27,7 @@ This can be achieved using `ssh-keygen`, getting a random art image, and using `
 
 **However this should all be done prior to running the bash script.** This is because the bash script is local to the environment its in, and after SSHing into `ieng6` the bash script would not be able to continue executing until the server is closed. I found this through these outputs:
 
-![SSH](InsertImagehere.com)
+![SSH](Lab5Screenshots/SSH.png)
 
 ### Cloning the Repo
 
