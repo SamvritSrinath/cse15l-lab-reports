@@ -18,14 +18,14 @@ For reference: Step 4 - 9 were:
 
 The first step is to SSH into ieng6. Each person will have their own credentials, for me it is: 
 `cs15lwi23ash@ieng6.ucsd.edu`. Also, we can also enable SSH keys to make it easier to log in. But in general, the format for SSHing into `ieng6` is 
-`ssh cs15lwi23___@ieng6.ucsd.edu`. 
+`ssh cs15lwi23___@ieng6.ucsd.edu`. **We will enclose all the other commands in quotes and seperate them using a `;` delimiter.** This way, the bash script will ssh and run all the commands on the remote server. See later for more details on how to set up SSH keys.
 
 ![SSH](Lab5Screenshots/SSH.png)
 #### SSH Keys
 
 This can be achieved using `ssh-keygen`, getting a random art image, and using `scp <path to key> ieng6.ucsd.edu:~/.ssh/authorized_keys`. This will load our key onto the `ieng6` remote server and allow the server to recognize our machine as an authorized user. This should be done prior to creating the bash script, as the bash script is local to our machine, and we would be able to run a script that would SSH into `ieng6` and run the rest of the script.	
 
-**However this should all be done prior to running the bash script.** This is because the bash script is local to the environment its in, and after SSHing into `ieng6` the bash script would not be able to continue executing until the server is closed. 
+**However this should all be done prior to running the bash script.** This is because the bash script is local to the environment its in, so we would need to be able to not enter a passphrase when we SSH into `ieng6` and run the bash script.
 
 
 ### Cloning the Repo
@@ -41,9 +41,6 @@ Ensuring that you're logged into ieng6, run the command `ssh-keygen` to generate
 Now to legitimize the user, `ssh-keyscan -t rsa github.com >> ~./ssh/known_hosts`. This will add the key to the known hosts file.
 And finally test your connection using the command `ssh -T git@github.com`. This is not necessary, but perhaps another approach to make our bash script more useful, but this would be done prior to running the bash script. This would be necessary for GitHub to not ask us for a passphrase prior to committing and pushing changes to the forked repository and allowing our bash script to run completely unattended.
 
-Also, we would need to copy over our bash script to ieng6, and this can be done using `scp <path to bash script> cs15lwi23___@ieng.ucsd.edu:~`.
-
-![SCP](Lab5Screenshots/SCP.png)
 
 ## Running and Debugging
 ### Running the Tests
@@ -66,16 +63,16 @@ We can run the tests again using the same commands as before. If the tests pass,
 
 ### Committing and Pushing the Changes
 
-Using `git add .` and `git commit -m "message"` and `git push` we can push the changes to our forked repo. In this scenario, we can use `git add .` to add all the files we've modified, which includes the class files and the revised `ListExamples` or we could use `git add ListExamples.java` to add only the file we've modified.
+Using `git add -all` and `git commit -m "message"` and `git push` we can push the changes to our forked repo. In this scenario, we can use `git add .` to add all the files we've modified, which includes the class files and the revised `ListExamples` or we could use `git add ListExamples.java` to add only the file we've modified.
 
 We can then commit our changes using `git commit -m "Fixed Files"` and push our changes using `git push`. And now we've modified and shown that the tests run successfully from only a bash script. 
 
 In its entirety the bash script looks like this:
 
 ```
-# SSH prior to running bash script
+ssh cs15lwi23ash@ieng6.ucsd.edu #enclose everything in quotes after
 # Debugging statement for repo already existing
-rm -rf lab 7
+rm -rf lab7
 
 git clone git@github.com:SamvritSrinath/lab7.git
 
@@ -93,14 +90,26 @@ javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
 java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests
 
 # Committing and Pushing the Changes
-git add .
+git add --all
 git commit -m "Fixed Files"
 
 git push
 ```
+In a one Liner:(with approparite syntax)
+`ssh cs15lwi23ash@ieng6.ucsd.edu "rm -rf lab7; git clone git@github.com:SamvritSrinath/lab7.git; cd lab7 ;  javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java; java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests 2>&1; sed '43 s/index1/index2/' "ListExamples.java" > ListExamples2.java && mv ListExamples2.java ListExamples.java; javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java; java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests; git add --all ; git commit -m 'Fixed Files'; git push origin main"`
+
+
 And the output we recieve is:
-![Output1](Lab5Screenshots/Output1.png)
-![Output2](Lab5Screenshots/Output2.png)
+![OutputFull](Lab5Screenshots/OutputFull.png)
+![Github](Lab5Screenshots/Github.png)
+
+
+And on our Remote Server, we have the respective Compiled Files and .class files, the modifeid `ListExamples.java` as well as the recent commit. 
+
+![RemoteCompile](Lab5Screenshots/RemoteCompile.png)
+![ModifiedVim](Lab5Screenshots/ModifiedVim.png)
+![CommitLog](Lab5Screenshots/CommitLog.png)
+
 And we've automated CLDQ(Took 5 seconds)!
 
 
